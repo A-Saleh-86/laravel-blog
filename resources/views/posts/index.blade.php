@@ -23,13 +23,7 @@
         <tr>
             <th scope="row">{{$post->id}}</th>
             <td>{{$post->title}}</td>
-            <td>
-                @if ($post->created_by ==1)
-                Ahmed
-            @else
-                Mohamed
-            @endif
-            </td>
+            <td>{{$post->user->name}}</td>
             <td>{{$post->created_at}}</td>
             <td>
                 <div>

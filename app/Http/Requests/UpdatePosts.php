@@ -24,7 +24,7 @@ class UpdatePosts extends FormRequest
         return [
             "title"=>"required | min:3",
             "description"=>"required | min:5 ",
-            "created_by"=>"required |exists:users,id",
+            "post_creator"=>"required |exists:users,id",
         ];
     }
 }

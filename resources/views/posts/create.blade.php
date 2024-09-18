@@ -21,11 +21,11 @@
     </div>
     <div class="mb-3">
         <label for="description" class="form-label">Description</label>
-        <textarea class="form-control" name="description" id="description" rows="3"></textarea>
+        <textarea class="form-control" name="description" id="description" rows="3">{{old('description')}}</textarea>
       </div>
       <div class="mb-3">
         <label for="created-by" class="form-label">Created By</label>
-          <select class="form-select" name="created_by" >
+          <select class="form-select" name="post_creator" >
             <option selected>..</option>
               @foreach ($users as $user)
                 <option value="{{$user->id}}">{{$user->name}}</option>

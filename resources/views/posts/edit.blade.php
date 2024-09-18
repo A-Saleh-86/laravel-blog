@@ -26,7 +26,7 @@
       </div>
       <div class="mb-3">
         <label for="created-by" class="form-label">Created By</label>
-          <select class="form-select" name="created_by" >
+          <select class="form-select" name="post_creator" >
             @foreach ($users as $user)
               <option value="{{$user->id}}"
                 @if ($post->created_by == $user->id)

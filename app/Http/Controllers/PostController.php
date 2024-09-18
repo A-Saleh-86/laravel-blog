@@ -71,7 +71,7 @@ class PostController extends Controller
         $description = request()->description;
         $postCreator = request()->post_creator;
 
-//        dd($data, $title, $description, $postCreator);
+    //    dd($data, $title, $description, $postCreator);
 
         //2- store the submitted data in database
 //        $post = new Post;
@@ -84,8 +84,8 @@ class PostController extends Controller
         Post::create([
             'title' => $title,
             'description' => $description,
-            'xyz' => 'some value', //ignore,
             'user_id' => $postCreator,
+            'post_creator' => $postCreator,
         ]);
 
         //3- redirection to posts.index

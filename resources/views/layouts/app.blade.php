@@ -30,7 +30,7 @@
 
             <!-- Page Content -->
             <main>
-                {{-- {{ $slot }} --}}
+                {{ $slot }}
 
                 <div class="container mt-4">
                     @yield('content')

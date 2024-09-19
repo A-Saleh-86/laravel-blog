@@ -42,6 +42,9 @@
                             <td>
                                 <div>
                                     <a href="{{ route('posts.show', $post->id) }}" class="btn btn-info">View</a>
+                                    
+                                    @if ($user == $post->user_id)
+                                        
                                     <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-primary">Edit</a>
     
                                     <form style="display: inline" action="{{ route('posts.delete', $post['id']) }}" method="post">
@@ -49,6 +52,8 @@
                                         @method('Delete')
                                         <button type="submit" class="btn btn-danger">Delete</button>
                                     </form>
+                                    
+                                    @endif
                                 </div>
                             </td>
                         </tr>

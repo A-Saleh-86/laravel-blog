@@ -6,17 +6,20 @@ use Illuminate\Http\Request;
 use App\Http\Requests\UpdatePosts;
 use App\Models\Post;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
     public function index()
     {
-        //select * from posts;
+        $user = Auth::id();
+        
+
+
         $postsFromDB = Post::all(); //collection object
 
-        //id, title (Var char), description(TEXT), created_at, updated_at
 
-        return view('posts.index', ['posts' => $postsFromDB]);
+        return view('posts.index', ['posts' => $postsFromDB, 'user'=>$user]);
     }
 
     //convention over configuration

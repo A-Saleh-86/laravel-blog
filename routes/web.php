@@ -3,13 +3,20 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CommentController;
+use App\Models\Post;
+use App\Models\Comment;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+
+    $comments = Comment::all();
+    $posts = POST::all();
+
+    return view('dashboard', ['posts'=>$posts, 'comments'=> $comments ]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -30,6 +37,9 @@ Route::middleware('auth')->group(function () {
     Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
 
     Route::delete('/posts/{post}',[PostController::class, 'destroy'])->name('posts.delete');
+
+    Route::post('posts/{id}/comments', [CommentController::class, 'store'])->name('comments.store');
+
 });
 
 require __DIR__.'/auth.php';

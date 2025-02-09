@@ -20,8 +20,6 @@ A powerful and user-friendly blog system built with **Laravel**. This project al
 ✅ SEO-friendly URLs  
 ✅ Responsive design  
 
-## Live Demo  
-[View the Blog](#) *(Add a link if hosted)*  
 
 ## Installation  
 ### **Prerequisites**  
@@ -92,7 +90,7 @@ laravel-blog/
 🔄 package.json   # Frontend dependencies  
 ```  
 
-## API Endpoints (If applicable)  
+## API Endpoints   
 | Method | Endpoint       | Description                  |  
 |--------|--------------|------------------------------|  
 | GET    | `/posts`     | Get all blog posts          |  
